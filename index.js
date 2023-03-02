@@ -1,7 +1,7 @@
-const employee = require('./lib/Employee');
-const manager = require('./lib/Manager');
-const engineer = require('./lib/Engineer');
-const intern = require('./lib/Intern');
+const Employee = require('./lib/Employee');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 const inquirer = require('inquirer');
 const fs = require('fs');
 
@@ -44,19 +44,23 @@ inquirer.prompt ([
         type: 'list',
         name: 'role',
         message: "What is the role of the team member?",
-        choices: ['Engineer', 'Intern', 'I do not want to add any more team members']
+        choices: ['Manager','Engineer', 'Intern', 'Done']
     },
 ])
 .then((answers) => {
 switch (answers.role) {
+    case 'Manager':
+        addManager();
+        break;
     case 'Engineer': 
     addEngineer();
     break;
     case 'Intern':
         addIntern();
         break;
-        default:
+        case 'Done':
             buildTeam();
+            break;
 }    
 })   
 }
