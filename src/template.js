@@ -23,7 +23,7 @@ function createHTML(team) {
     <ul class=list-group p-3>
     <li class="list-group-item"> ID: ${member.getID()}</li>
     <li class="list-group-item"> Email: <a href="mailto:${member.getEmail()} class="card link">${member.getEmail()}</a></li>
-    <li class="list-group-item"> Office Number: ${member.getOfficeNumber()}</li>
+    <li class="list-group-item"> Github: <a href="https://github.com/${member.getGithub()}" target="_blank" class="card-link">${member.getGithub()}</a></li>
     </ul>
         </div>`;
     }
@@ -35,7 +35,7 @@ function createHTML(team) {
     <ul class=list-group p-3>
     <li class="list-group-item"> ID: ${member.getID()}</li>
     <li class="list-group-item"> Email: <a href="mailto:${member.getEmail()} class="card link">${member.getEmail()}</a></li>
-    <li class="list-group-item"> Office Number: ${member.getOfficeNumber()}</li>
+    <li class="list-group-item"> School: ${member.getSchool()}</li>
     </ul>
         </div>`;
     }
