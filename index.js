@@ -126,7 +126,5 @@ function addIntern() {
 }
 
 function buildTeam() {
-    if (!fs.existsSync(OUTPUT_DIR))
-    fs.mkdirSync(OUTPUT_DIR);
-    fs.writeFileSync(outputPath, render(team), "utf-8");
+    fs.writeFileSync('dist/teamProfile.html', createTeam(team), "utf-8");
 }
