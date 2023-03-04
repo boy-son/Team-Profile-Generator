@@ -39,7 +39,7 @@ test('gets intern name', () => {
 test('gets intern id', () => {
     const id =1;
     const intern = new Intern('Horatio', id);
-    expect (intern.getId()).toBe(id);
+    expect (intern.getID()).toBe(id);
 });
 
 test('gets intern email', () => {
@@ -55,7 +55,7 @@ test('gets intern school', () => {
 })
 
 test('gets intern role', () => {
-    const role = 'intern';
+    const role = 'Intern';
     const intern = new Intern ('Horatio', 1, 'test@test-email.com', 'Drummond');
     expect (intern.getRole()).toBe(role);
 });

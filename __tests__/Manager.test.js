@@ -27,7 +27,7 @@ test('creates an manager email', () => {
 test('creates an manager office number', () => {
     const officeNum = '888-888-8888';
     const manager = new Manager('Horatio', 1, 'test@test-email.com', officeNum);
-    expect (manager.officeNum).toBe(officeNum);
+    expect (manager.officeNumber).toBe(officeNum);
 })
 
 test('gets manager name', () => {
@@ -39,7 +39,7 @@ test('gets manager name', () => {
 test('gets manager id', () => {
     const id =1;
     const manager = new Manager('Horatio', id);
-    expect (manager.getId()).toBe(id);
+    expect (manager.getID()).toBe(id);
 });
 
 test('gets manager email', () => {
@@ -55,7 +55,7 @@ test('gets manager office number', () => {
 })
 
 test('gets manager role', () => {
-    const role = 'manager';
+    const role = 'Manager';
     const manager = new Manager ('Horatio', 1, 'test@test-email.com', '888-888-8888');
     expect (manager.getRole()).toBe(role);
 });

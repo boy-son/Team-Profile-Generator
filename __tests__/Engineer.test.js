@@ -39,7 +39,7 @@ test('gets Engineer name', () => {
 test('gets Engineer id', () => {
     const id =1;
     const engineer = new Engineer('Horatio', id);
-    expect (engineer.getId()).toBe(id);
+    expect (engineer.getID()).toBe(id);
 });
 
 test('gets Engineer email', () => {

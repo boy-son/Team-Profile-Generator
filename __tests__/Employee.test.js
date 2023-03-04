@@ -33,7 +33,7 @@ test('gets employee name', () => {
 test('gets employee id', () => {
     const id =1;
     const employee = new Employee('Horatio', id);
-    expect (employee.getId()).toBe(id);
+    expect (employee.getID()).toBe(id);
 });
 
 test('gets employee email', () => {

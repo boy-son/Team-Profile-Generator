@@ -4,12 +4,21 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const inquirer = require('inquirer');
 const fs = require('fs');
-
+const htmlGen = require('./src/template');
 const team = [];
 
 function init() {
+    
+return addManager()
+.then(addTeamMember)
+.then(() => team)
+.then(buildTeam)
+.catch(err => {
+  console.log(err);
+});
+
 function addManager() {
-inquirer.prompt([
+return inquirer.prompt([
     {
         type: 'input',
         name: 'name',
@@ -34,12 +43,11 @@ inquirer.prompt([
 .then((answers) => {
     const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
     team.push(manager);
-    addTeamMember();
 })
 }
 
 function addTeamMember() {
-inquirer.prompt ([
+return inquirer.prompt ([
     {
         type: 'list',
         name: 'role',
@@ -50,13 +58,13 @@ inquirer.prompt ([
 .then((answers) => {
 switch (answers.role) {
     case 'Manager':
-        addManager();
+        addManager().then(addTeamMember);
         break;
     case 'Engineer': 
-    addEngineer();
+    addEngineer().then(addTeamMember);
     break;
     case 'Intern':
-        addIntern();
+        addIntern().then(addTeamMember);
         break;
         case 'Done':
             buildTeam();
@@ -64,10 +72,9 @@ switch (answers.role) {
 }    
 })   
 }
-}
 
 function addEngineer() {
-    inquirer.prompt ([{
+    return inquirer.prompt ([{
         type: 'input',
         name: 'name',
         message: "What is the name of the engineer?"
@@ -92,12 +99,11 @@ function addEngineer() {
 .then((answers) => {
     const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
     team.push(engineer);
-    addTeamMember();
 })
 }
 
 function addIntern() {
-    inquirer.prompt ([{
+    return inquirer.prompt ([{
         type: 'input',
         name: 'name',
         message: "What is the name of the intern?"
@@ -121,10 +127,12 @@ function addIntern() {
 .then((answers) => {
     const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
     team.push(intern);
-    addTeamMember();
 })
 }
 
 function buildTeam() {
-    fs.writeFileSync('dist/teamProfile.html', createTeam(team), "utf-8");
+    fs.writeFileSync('dist/teamProfile.html', htmlGen(team), "utf-8");
 }
+}
+
+init();
