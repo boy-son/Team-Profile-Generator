@@ -10,7 +10,7 @@ function createHTML(team) {
     </div>
     <ul class="list-group p-3">
     <li class="list-group-item d-flex justify-content-between align-items-center"> ID: ${member.getID()}</li>
-    <li class="list-group-item d-flex justify-content-between align-items-center"> Email: <a href="mailto:${member.getEmail()} class="card link">${member.getEmail()}</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center"> Email: <a href="mailto:${member.getEmail()}" class="card link">${member.getEmail()}</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center"> Office Number: ${member.getOfficeNumber()}</li>
     </ul>
         </div>`;
@@ -22,7 +22,7 @@ function createHTML(team) {
     </div>
     <ul class="list-group p-3">
     <li class="list-group-item d-flex justify-content-between align-items-center"> ID: ${member.getID()}</li>
-    <li class="list-group-item d-flex justify-content-between align-items-center"> Email: <a href="mailto:${member.getEmail()} class="card link">${member.getEmail()}</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center"> Email: <a href="mailto:${member.getEmail()}" class="card link">${member.getEmail()}</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center"> Github: <a href="https://github.com/${member.getGithub()}" target="_blank" class="card-link">${member.getGithub()}</a></li>
     </ul>
         </div>`;
@@ -34,7 +34,7 @@ function createHTML(team) {
     </div>
     <ul class="list-group p-3">
     <li class="list-group-item d-flex justify-content-between align-items-center"> ID: ${member.getID()}</li>
-    <li class="list-group-item d-flex justify-content-between align-items-center"> Email: <a href="mailto:${member.getEmail()} class="card link">${member.getEmail()}</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center"> Email: <a href="mailto:${member.getEmail()}" class="card link">${member.getEmail()}</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center"> School: ${member.getSchool()}</li>
     </ul>
         </div>`;
